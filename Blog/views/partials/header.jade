@@ -1,0 +1,51 @@
+doctype html
+html(lang="tr")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="")
+    meta(name="author" content="")
+    title Clean Blog - Start Bootstrap Theme
+    // Bootstrap core CSS
+    link(href="/css/bootstrap/css/bootstrap.min.css" rel="stylesheet")
+    // Custom fonts for this template
+    link(href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css")
+    // Custom styles for this template
+    link(href="/css/clean-blog.css" rel="stylesheet")
+    link(rel="stylesheet" href="/css/home.css")
+    link(rel="shortcut icon" href="/img/archlinux.png", type='image/x-icon')
+    link
+  body
+    // Navigation
+    nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.animated.bounceInDown
+      .container
+        a.navbar-brand(href="/") Start Bootstrap
+        button.navbar-toggler.navbar-toggler-right(type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation") Menu
+          i.fa.fa-bars
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href="/") Home
+            li.nav-item
+              a.nav-link(href="/about") About
+            li.nav-item
+              a.nav-link(href="/post") Sample Post
+            li.nav-item
+              a.nav-link(href="/contact") Contact
+            li.nav-item
+              a.nav-link(href="/resume") Resume
+            
+            if !currentUser 
+              li.nav-item 
+                a.nav-link(href="/admin/login") Sign In
+            else 
+              li.nav-item
+                a.nav-link(href="#")= currentUser.username
+              li.nav-item
+                a.nav-link(href="/admin/logout") Cikis Yap
+    block content
+    
+    img(src="/img/archlinux.png", alt="")
+              

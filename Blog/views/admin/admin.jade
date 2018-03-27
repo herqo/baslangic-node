@@ -1,0 +1,37 @@
+extends ../partials/header
+block content
+  // Page Header
+  header.masthead.GreyBc
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1 Admin Page
+            span.subheading This is what I do.
+  .container
+    for admin in data
+      .row
+        .col-lg-3.mx-auto
+          button.btn.btn-outline-danger.btn-block(id= admin.actionId , type='button', onclick='catchId(this.id)')= admin.displayName
+
+  script.
+    function catchId(clicked_id){
+    if (clicked_id == 1){
+      window.location.href = 'changeHomeImage';
+      return false;
+    }
+
+    if (clicked_id == 4){
+      window.location.href = '/post/new';
+      return false;
+      }
+
+    if (clicked_id == 5){
+      window.location.href = '/post/all-posts'
+      return false;
+    }
+
+    }
+
+include ../partials/footer

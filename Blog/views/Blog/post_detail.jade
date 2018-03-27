@@ -1,0 +1,28 @@
+extends ../partials/header
+block content
+  // Page Header
+  header.masthead(style="background-image: url(#{posts.PostImg})")
+    .overlay
+    #MyRightLight.container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1#MyBounce.animated(style='font-size:30px') #{posts.Title}
+            span.subheading #{posts.PostCom} 
+            span.meta
+              if (currentUser)
+                a(href='#') #{currentUser.username}  Tarafindan  #{moment(posts.date).format('DD.MM.YYYY')} 
+              else 
+                a(href="#") Olusturulma Tarihi: #{moment(posts.date).format('DD.MM.YYYY')}
+  article
+    .container
+      .row
+        .col-lg-10.mx-auto !{posts.Post}
+  div#forflex      
+    form#forflexform(action="/post/#{posts.myslug}?_method=DELETE" method="post")
+      button#forflexbutton.btn.btn-danger(href="#") Sil 
+    a#forflexa.btn.btn-success(href="/post/#{posts.myslug}/edit") Düznele 
+    
+        
+      
+        

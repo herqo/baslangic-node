@@ -1,0 +1,37 @@
+extends ../partials/header
+block content 
+  // Page Header
+  header.masthead.GreyBc
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1 Register Page
+            span.subheading This is what I do.
+  .container(style='margin-top: 80px')
+    form(action='/admin/register',name='Form' ,method='post')
+      .form-group
+        label(for='Username') Username:
+        input#Username.form-control(type='text', name='username')
+      .form-group
+        label(for='Email') Email:
+        input#Email.form-control(type='email', name='email')
+      .form-group
+        label(for='Password') Password:
+        input#Password.form-control(type='password', name='password')
+      .form-group
+        input#myButton.btn.btn-primary.btn-block(type="submit", value='Register')
+  // Error 
+  if (success_message)
+    div.alert.alert-success #{success_message} 
+
+  if (error_message)
+    .alert.alert-error #{error_message}
+
+  include ../partials/footer
+
+  script(src="/js/register.js")  
+    
+
+

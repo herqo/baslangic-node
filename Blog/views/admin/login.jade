@@ -1,0 +1,24 @@
+extends ../partials/header
+block content 
+  // Page Header
+  header.masthead.GreyBc
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1 Admin Page
+            span.subheading This is what I do.
+  .container(style='margin-top: 80px')
+    form(action='/admin/login', method='post')
+      .form-group
+        label(for='Username') Username:
+        input#Username.form-control(type='text', name='username')
+      .form-group
+        label(for='Email') Email:
+        input#Email.form-control(type='email', name='email')
+      .form-group
+        label(for='Password') Password:
+        input#Password.form-control(type='password', name='password')
+      .form-group
+        button.btn.btn-primary.btn-block(type='submit') Login

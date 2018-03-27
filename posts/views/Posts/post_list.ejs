@@ -1,0 +1,38 @@
+<% include ../partials/header.ejs %>
+
+
+<div class="container">
+    <header class="jumbotron">
+        <h1>
+            Postların Listelenme Sayfası.
+        </h1>
+        <p>
+            Ortalama Üstü Güzel Postlar
+        </p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/posts/new">Post Oluştur</a>
+        </p>
+
+    </header>
+    <div class="row">
+        <% posts.forEach(function (post){ %>
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="form-group">
+                <h2 class="page-header">
+                    <%= post.title %>
+                </h2>
+                <img style="width: 800px;" src="<%= post.img %>"
+                     class="img-responsive">
+                <br>
+                <p>
+                    <%= post.content %>
+                </p>
+            </div>
+            <p>
+                <a class="btn btn-warning" href="/posts/<%= post.slug %>">Detail</a>
+            </p>
+        </div>
+        <% }); %>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>

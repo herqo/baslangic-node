@@ -1,0 +1,19 @@
+<title>Test Sayfası</title>
+<% include partials/header.ejs %>
+
+<h1>
+    Şehirler SAyfası
+    <ul>
+        <% for (sehir in sehirler) { %>
+        <li><%= sehirler[sehir] %> </li>
+        <% }; %>
+    </ul>
+</h1>
+
+<form action="/newCity" method="post">
+
+    <input type="text" name="newcity" placeholder="Sehir Giriniz">
+    <button>Yeni Şehir Ekle</button>
+</form>
+
+<% include partials/footer.ejs %>

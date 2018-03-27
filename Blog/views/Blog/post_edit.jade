@@ -1,0 +1,33 @@
+extends ../partials/header
+block content   
+  header.masthead(style="background-image: url('img/home-bg.jpg')")
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .site-heading
+            h1 Post Duzenlme
+            h3 #{post.Title}
+            span.subheading= post.Postcom
+  .container  
+    form(action="/post/#{post.myslug}?_method=PUT" method="Post")
+      .form-group
+        label(for='PostTitle') Post Title
+        input#PostTitle.form-control(type='text', name='PostTitle', value='#{post.Title}')
+      .form-group
+        label(for='PostCom') Post Commertical Sentencte
+        input#PostCom.form-control(type='text', name='PostCom', value='#{post.PostCom}')
+      .form-group
+        label(for='PostImg') Post Commercial Image
+        input#PostImg.form-control(type='text', name='PostImg', value='#{post.PostImg}')
+      label(for='myTextArea')
+      textarea#myTextArea(name='editor') #{post.Post}
+      button#myButton.btn.btn-primary.btn-block Submit
+  
+
+  // Footer
+  
+  include ../partials/footer
+  script(src='https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js')
+  script.
+      CKEDITOR.replace('editor')

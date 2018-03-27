@@ -1,0 +1,38 @@
+<% include ../partials/header.ejs %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h1 class="page-header">
+                    Yeni Yorum Ekle
+                </h1>
+                <h1 class="page-header">
+                    <%= post.title %>
+                </h1>
+
+                <form method="post" class="form-group" action="/posts/<%= post._id %>/comment">
+                    <div class="form-group">
+                        <p>
+                            <strong>
+                                <%= currentUser.username %>
+                            </strong>
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="yorum[comment]" style="width: 100%" rows="15"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-info btn-block">Comment Create</button>
+                    </div>
+
+                </form>
+                <a class="btn btn-default btn-block" href="/posts">Postların Listelenme Sayfası</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <% include ../partials/footer.ejs %>

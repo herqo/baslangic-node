@@ -1,0 +1,34 @@
+extends ../partials/header
+block content    
+  // Page Header
+  header.masthead(style="background-image: url('img/home-bg.jpg')")
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .site-heading
+            h1 Clean Blog
+            span.subheading A Blog Theme by Start Bootstrap
+  // Main Content
+  .container
+    for post in posts
+      .row
+        .col-lg-3.mx-auto
+          br
+          img.img-thumbnail(src= post.PostImg style="margin-top: 10px")
+        .col-lg-9.col-md-10.mx-auto.post-heading
+          .post-preview
+            a(href="/post/" + post.myslug )
+              h2.post-title #{post.Title}
+              h3.post-subtitle
+              | post.PostCom
+            p.post-meta
+              | Posted by
+              a(href="#") #{post.date}
+          // Pager
+      
+    .clearfix
+      a.btn.btn-primary.float-right(href="/post/all-posts") Older Posts →
+  
+  hr
+  include ../partials/footer

@@ -1,0 +1,14 @@
+@import 'animate.css';
+@if_not_image : #868e96;
+
+header {
+  #MyRightLight {
+    animation: lightSpeedIn 2s;
+  }
+}
+.GreyBc {
+  background-color: @if_not_image;
+  &:hover {
+    background-color: #868e95;
+  }
+}

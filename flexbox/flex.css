@@ -1,0 +1,141 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    font-size: 14px;
+}
+
+body {
+    background-color: grey;
+    padding-bottom: 100px;
+}
+
+h2,
+h3 {
+    margin: 0 0 .75em 0;
+}
+
+.container {
+    max-width: 750px;
+    margin: 20px auto 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.form-row {
+    padding: 10px 0;
+    display: flex;
+}
+
+.form-row label {
+    padding: 10px;
+    flex: 1
+}
+
+.form-row input {
+    flex: 3;
+}
+
+/* İkinci Örnek */
+
+.column-layout {
+    max-width: 1300px;
+    background-color: #fff;
+    margin: 40px auto 0 auto;
+    line-break: 1.65;
+    padding: 20px 50px;
+    display: flex
+}
+
+.main-colum {
+    flex: 2;
+    order: 2;
+}
+
+.sidebar-one {
+    flex: 1;
+    order: 1;
+}
+
+.sidebar-two {
+    flex: 1;
+    order: 3
+}
+
+/* Üçüncü Örnek */
+
+.call-outs-container {
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+}
+
+.call-out {
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    flex-basis: 30%;
+}
+
+@media (min-width: 900px) {
+    .call-outs-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.call-out:nth-child(1) {
+    background-color: pink;
+}
+
+.call-out:nth-child(2) {
+    background-color: blue;
+}
+
+.call-out:nth-child(3) {
+    background-color: green;
+}
+
+/* Dördüncü Örnek */
+
+.fixed-size-container {
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    background-color: #fff;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.fixed-size {
+    width: 150px;
+    height: 100px;
+    background-color: royalblue;
+    color: #fff;
+    line-height: 100px;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner {
+    height: 400px;
+    width: 700px;
+    margin: 40px auto 40px auto;
+    background-color: #2a2a2a;
+    display: flex;
+}
+
+.center {
+    color: #fff;
+    font-size: 50px;
+    margin: auto;
+}
+
+
+.

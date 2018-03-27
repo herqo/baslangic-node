@@ -1,0 +1,57 @@
+extends ../partials/header
+block content
+  // Page Header
+  header.masthead.GreyBc
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1 Post Create Page
+            span.subheading This is what I do.
+  .container
+    h2
+    form
+      .form-group
+        label(for='PostTitle') Post Title
+        input#PostTitle.form-control(type='text', name='PostTitle', placeholder='Post Title')
+      .form-group
+        label(for='PostCom') Post Commertical Sentencte
+        input#PostCom.form-control(type='text', name='PostCom', placeholder='Blog Commertical Sentencte')
+      .form-group
+        label(for='PostImg') Post Commercial Image
+        input#PostImg.form-control(type='text', name='PostImg', placeholder='Post Image')
+      label(for='myTextArea')
+      textarea#myTextArea(name='editor')
+      button#myButton.btn.btn-primary.btn-block Submit
+  // Footer
+  include ../partials/footer
+  script(src='https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js')
+  script.
+    CKEDITOR.replace('editor')
+  script.
+    $(document).ready(function (){
+      $('#myButton').click(function (e){
+        //e.preventDefault();
+        const PostTitle = $('#PostTitle').val();
+        const PostCom   = $('#PostCom').val();
+        const PostImg   = $('#PostImg').val();
+        const Post      = CKEDITOR.instances.myTextArea.getData();
+
+        console.log(`Post Title : ${PostTitle} ------  Post Com : ${PostCom} ------ Post Img : ${PostImg} ----- Post :  ${Post}`);
+
+        const data = {
+          PostTitle: PostTitle,
+          PostCom  : PostCom,
+          PostImg  : PostImg,
+          Post     : Post        
+        }
+        console.log(data)
+        
+        $.post('/post/new', {data: data})
+          .then((NewPost) => {
+            console.log(NewPost)
+          })
+
+      });
+    })

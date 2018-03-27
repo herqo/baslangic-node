@@ -1,0 +1,28 @@
+extends ../partials/header
+block content
+  header.masthead.GreyBc
+    .overlay
+    .container
+      .row
+        .col-lg-8.col-md-10.mx-auto
+          .page-heading
+            h1 Older All Posts
+            span.subheading This is what I do.
+
+  .container
+    for post in posts
+      .row
+        .col-lg-3
+          img.img-thumbnail(src= post.PostImg style="margin-top: 10px")
+        .col-lg-8.col-md-9.post-heading
+          .post-preview
+            a(href="/post/" + post.myslug )
+              h2.post-title #{post.Title}
+              h3.post-subtitle
+                  post.PostCom
+            p.post-meta
+              | Posted by
+              a(href="#") #{post.date}
+          // Pager
+  hr
+  include ../partials/footer

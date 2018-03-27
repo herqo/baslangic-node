@@ -1,0 +1,10 @@
+@import 'animate.css';
+header #MyRightLight {
+  animation: lightSpeedIn 2s;
+}
+.GreyBc {
+  background-color: #868e96;
+}
+.GreyBc:hover {
+  background-color: #868e95;
+}
